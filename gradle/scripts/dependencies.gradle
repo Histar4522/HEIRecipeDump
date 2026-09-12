@@ -48,8 +48,8 @@ dependencies {
     // 8648715 = file id of Had Enough Items 4.34.3. Not shaded: HEI is a normal mod dependency,
     // the user installs it like any other mod.
     compileOnly rfg.deobf('curse.maven:had-enough-items-557549:8648715')
-    // Uncomment to have HEI available when running the dev client (drop MixinBooter into run/mods too):
-    // runtimeOnly rfg.deobf('curse.maven:had-enough-items-557549:8648715')
+    // In the dev workspace it is a classpath mod, so /heirecipedump works on runClient too.
+    runtimeOnly rfg.deobf('curse.maven:had-enough-items-557549:8648715')
     // Tests compile against HEI too, IngredientCapture implements its IIngredients
     testCompileOnly rfg.deobf('curse.maven:had-enough-items-557549:8648715')
     testRuntimeOnly rfg.deobf('curse.maven:had-enough-items-557549:8648715')

@@ -65,8 +65,12 @@ jei_dump/categories/minecraft.crafting.json
 ## Building
 
 See the [TemplateDevEnv](https://github.com/CleanroomMC/TemplateDevEnv) instructions the workspace
-is based on. `gradle/scripts/dependencies.gradle` compiles against HadEnoughItems 4.34.3; to run
-the dev client, uncomment the `runtimeOnly` line there and drop MixinBooter into `run/mods`.
+is based on. `gradle/scripts/dependencies.gradle` compiles *and runs* against HadEnoughItems 4.34.3,
+so `runClient` has HEI on the classpath and `/heirecipedump` works there directly (don't also drop
+HEI into `run/mods`, that would be a duplicate `jei` mod).
+
+Gradle itself needs a Java 17+ JVM while MC is compiled with the Java 8 toolchain, so if the shell's
+`JAVA_HOME` points at a JDK 8, run it as `JAVA_HOME=<jdk21+> ./gradlew runClient`.
 
 ## License
 
