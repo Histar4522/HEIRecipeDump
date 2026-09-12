@@ -44,7 +44,15 @@ dependencies {
     // 'group:name:version:classifier' where classifier is optional
 
     // Example - Deobfuscating dependencies:
-    // rfg.deobf('curse.maven:had-enough-items-557549:4543375')
+    // HadEnoughItems, the 1.12.2 JEI fork this mod dumps. 557549 = curse project id,
+    // 8648715 = file id of Had Enough Items 4.34.3. Not shaded: HEI is a normal mod dependency,
+    // the user installs it like any other mod.
+    compileOnly rfg.deobf('curse.maven:had-enough-items-557549:8648715')
+    // Uncomment to have HEI available when running the dev client (drop MixinBooter into run/mods too):
+    // runtimeOnly rfg.deobf('curse.maven:had-enough-items-557549:8648715')
+    // Tests compile against HEI too, IngredientCapture implements its IIngredients
+    testCompileOnly rfg.deobf('curse.maven:had-enough-items-557549:8648715')
+    testRuntimeOnly rfg.deobf('curse.maven:had-enough-items-557549:8648715')
     // By wrapping a dependency descriptor in rfg.deobf() method call, the dependency is queued for deobfuscation
     // When deobfuscating, RFG respects the mapping_channel + mapping_version stated in gradle.properties
 

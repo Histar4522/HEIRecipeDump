@@ -1,6 +1,8 @@
 # Changelog
 
-## [1.0.0] - 2023-09-15
+## [1.0.0] - 2026-09-12
 
 ### Added
-- This is a default template changelog that follows the [KeepAChangelog Convention](https://keepachangelog.com/en/1.1.0/)
+- `/heirecipedump dump_all|dump_recipes [category]|dump_items [modid]` client command.
+- JSON dump of every HEI recipe category (with per-category metainfo), every recipe and every
+  registered item into `jei_dump/` in the game directory.
